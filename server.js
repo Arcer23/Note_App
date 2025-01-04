@@ -28,9 +28,7 @@ app.use("/auth", checkuserRole, authenciatetoken, authRouter)
 app.use('/', userRouter)
 app.use("/",notesRouter)
 
-app.get("/", (req, res) => {
-    res.send("this is heellloo")
-})
+
 
 app.listen(3000, () => {
     console.log("Server is Running At The Port", 3000)

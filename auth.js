@@ -6,6 +6,7 @@ router.post("/signup", async (req, res) => {
     const data = req.body;
     try {
         const user = User(data);
+
         const userinfo = await user.save();
         const token = jwt.sign({ id: user._id, username: user.username });
         res.status(200).json({ response: response, token: token },"pranish")
@@ -35,9 +36,7 @@ router.post("/login", async (req, res) => {
     }
 })
 
-router.get("/test", (req, res) => {
-    res.send("this is testing")
-})
+
 
 
 export { router }
